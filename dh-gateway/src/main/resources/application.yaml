@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: dh-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: baidu-route
+          uri: https://www.baidu.com
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+
+
+server:
+  port: 80
